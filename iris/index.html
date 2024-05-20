@@ -48,11 +48,7 @@
             border-radius: 8px;
             margin-top: 20px;
         }
-        .words-container {
-            text-align: center;
-            width: 85%;
-            margin-top: 10px;
-        }
+
         .words-container .justified-text {
             text-align: justify;
             margin-bottom: 15px;
@@ -73,6 +69,7 @@
         <div class="image-container">
             <img src="source/img/teaser.png" alt="Description of the image">
         </div>
+
         <div class="words-container">
             <div class="small-title">Abstract</div>
             <div class="justified-text">
@@ -82,6 +79,7 @@
                 Compared to previous work, the algorithm of this work addresses issues such as the significant impact of predicted pose on reconstruction results, poor quality and insufficient quantity of supervised data during partial cloud reconstruction, unreasonable utilization of predicted partial point clouds, and limited expression ability of previous reconstruction methods.Furthermore, we address data quality issues by improving the acquisition and utilization of keypoint features. Moreover, we enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
             </div>
         </div>
+
         <div class="words-container">
             <div class="small-title">Method</div>
                 
@@ -92,12 +90,14 @@
                 "The Mask3D Based Object Segmentation & Localization Prediction" part requires segmenting the point cloud of the object from the scene point cloud and obtaining corresponding pose information. This section is modified based on the Mask3D segmentation model to predict the center and size of the object, but not the angle.
             </div>
             <div class="justified-text">
-            
+            "Shape Prior Vae"  embeds the shape of a 3D object into latent vectors, representing the object using latent vectors. At this step,  data augmentation will be performed during training, where the orientation of the object is arbitrary, allowing the reconstruction method to handle input of point cloud objects with any orientation. We use keypoints and overall points to do cross attention, which makes it faster and more effective to obtain Key Points Features for future use.
             </div>
             <div class="justified-text">
-            
+            "Partial Point Cloud Reconstruction Diffusion Model" 
             </div>
+
         </div>
+
     </div>
 </body>
 </html>
