@@ -88,11 +88,14 @@
             </div>
         </div>
 
+        <div class="image-container">
+            <img src="source/img/method.png" alt="Description of the image">
+        </div>
+
         <div class="words-container">
             <div class="small-title">Method</div>
-                
             <div class="justified-text">
-                <p> The algorithm is mainly divided into three parts, namely three models.</p> 
+                The algorithm is mainly divided into three parts, namely three models.
             </div>
             <div class="justified-text">
                 "The Mask3D Based Object Segmentation & Localization Prediction" part requires segmenting the point cloud of the object from the scene point cloud and obtaining corresponding pose information. This section is modified based on the Mask3D segmentation model to predict the center and size of the object, but not the angle.
@@ -101,8 +104,9 @@
             "Shape Prior Vae"  embeds the shape of a 3D object into latent vectors, representing the object using latent vectors. At this step,  data augmentation will be performed during training, where the orientation of the object is arbitrary, allowing the reconstruction method to handle input of point cloud objects with any orientation. We use keypoints and overall points to do cross attention, which makes it faster and more effective to obtain Key Points Features for future use.
             </div>
             <div class="justified-text">
-            "Partial Point Cloud Reconstruction Diffusion Model" 
+            "Partial Point Cloud Reconstruction Diffusion Model" requires training a key point diffusion model to complete and reconstruct the partial point clouds. During training, the scene point cloud segmentation detection model is used to obtain the partial point cloud and pose information of the instance, which is then transformed from the scene space to the regular space as input for the key point diffusion model.
             </div>
+
 
         </div>
 
