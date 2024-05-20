@@ -3,44 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Model with Three.js</title>
+    <title>Instance-Level Object Reconstruction in Scenes based on Key-point Diffusion Model</title>
     <style>
-        canvas { display: block; }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .author a {
+            text-decoration: none;
+            color: #0073e6;
+        }
+        .author a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="userInput show" tabindex="0" role="img" aria-label="3D model. Use mouse, touch or arrow keys to move." style="cursor: grab; touch-action: none;">
-        <div class="slot canvas">
-            <slot name="canvas">
-                <canvas id="myCanvas" width="240" height="180" style="width: 160px; height: 120px;" class="show"></canvas>
-            </slot>
+    <div class="container">
+        <div class="title">Instance-Level Object Reconstruction in Scenes based on Key-point Diffusion Model</div>
+        <div class="author">
+            <a href="https://scholar.google.com/citations?user=9GbfsdwAAAAJ&hl=zh-CN">Xibo Fan</a>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script>
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, 240 / 180, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('myCanvas') });
-
-        renderer.setSize(240, 180);
-        document.body.appendChild(renderer.domElement);
-
-        const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        camera.position.z = 5;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-            renderer.render(scene, camera);
-        }
-
-        animate();
-    </script>
 </body>
 </html>
