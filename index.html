@@ -27,7 +27,7 @@
             document.body.appendChild(renderer.domElement);
 
             // 使用正确的引用初始化OrbitControls
-            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls = new OrbitControls(camera, renderer.domElement);
 
             loadOBJModel('iris/source/3d/0342_bi0.obj', {x: 0, y: 0, z: 0});
 
@@ -42,7 +42,7 @@
         }
 
         function loadOBJModel(path, position) {
-            const loader = new THREE.OBJLoader();
+            const loader = new OBJLoader();
             loader.load(
                 path,
                 (object) => {
