@@ -40,22 +40,23 @@
         .author a:hover {
             text-decoration: underline;
         }
-        .image-container {
-            margin-top: 20px;
-        }
+
         .image-container img {
-            width: 80%; /* Adjust this to control the image width relative to the container */
+            width: 85%; /* Adjust this to control the image width relative to the container */
             max-width: 600px; /* Ensure the image does not get too large */
             height: auto;
             border-radius: 8px;
+            margin-top: 20px;
         }
         .justified-text {
             text-align: justify;
-            width: 80%;
+            width: 85%;
+            justify-content: center;
+            margin-bottom: 5px;
         }
-        .abstract-title{
+        .small-title{
             font-size: 17px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             font-weight: bold;
         }
     </style>
@@ -70,9 +71,19 @@
             <img src="source/img/teaser.png" alt="Description of the image">
         </div>
         <div class="abstract">
-            <div class="abstract-title">Abstract</div>
+            <div class="small-title">Abstract</div>
             <div class="justified-text">
                 Semantic scene reconstruction based on point clouds is an important and challenging task in 3D scene understanding. This task requires not only identifying each instance in the point cloud scene but also reconstructing their geometric shapes based on partially observed point cloud data. Compared to previous work, the algorithm of this work addresses issues such as the significant impact of predicted pose on reconstruction results, poor quality and insufficient quantity of supervised data during partial cloud reconstruction, unreasonable utilization of predicted partial point clouds, and limited expression ability of previous reconstruction methods.Furthermore, we address data quality issues by improving the acquisition and utilization of keypoint features. Moreover, we enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
+            </div>
+            <div class="justified-text">
+                Compared to previous work, the algorithm of this work addresses issues such as the significant impact of predicted pose on reconstruction results, poor quality and insufficient quantity of supervised data during partial cloud reconstruction, unreasonable utilization of predicted partial point clouds, and limited expression ability of previous reconstruction methods.Furthermore, we address data quality issues by improving the acquisition and utilization of keypoint features. Moreover, we enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
+            </div>
+        </div>
+        <div class="method">
+            <div class="small-title">Method</div>
+
+            <div class="justified-text">
+            
             </div>
         </div>
     </div>
