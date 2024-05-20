@@ -115,65 +115,8 @@
             "Partial Point Cloud Reconstruction Diffusion Model" requires training a key point diffusion model to complete and reconstruct the partial point clouds. During training, the scene point cloud segmentation detection model is used to obtain the partial point cloud and pose information of the instance, which is then transformed from the scene space to the regular space as input for the key point diffusion model.
             </div>
         </div>
+
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script>
-
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            var renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-    
-
-            var light = new THREE.PointLight(0xffffff, 1);
-            light.position.set(1, 1, 1);
-            scene.add(light);
-    
-
-            var controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.25;
-            controls.enableZoom = true;
-    
-
-            function loadOBJ(scene, filePath, position) {
-                var loader = new THREE.OBJLoader();
-                loader.load(
-                    filePath,
-                    function (object) {
-                        object.position.set(position.x, position.y, position.z);
-                        scene.add(object);
-                    },
-                    function (xhr) {
-                        console.log((xhr.loaded / xhr.total * 100) + '% 已加载');
-                    },
-                    function (error) {
-                        console.log('加载错误：', error);
-                    }
-                );
-            }
-    
-
-            function animate() {
-                requestAnimationFrame(animate);
-                controls.update();
-                renderer.render(scene, camera);
-            }
-    
-
-            camera.position.z = 5;
-    
-
-
-            loadOBJ(scene, 'source/3d/scene0549_00.obj', { x: -2, y: 0, z: 0 });
-            loadOBJ(scene, 'source/3d/549_dimr.obj', { x: 0, y: 0, z: 0 });
-            loadOBJ(scene, 'source/3d/549_bi0.obj', { x: 2, y: 0, z: 0 });
-            loadOBJ(scene, 'source/3d/549_gt.obj', { x: 4, y: 0, z: 0 });
-    
-
-            animate();
-        </script>
 
 
 
