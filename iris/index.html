@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <title>Instance-Level Object Reconstruction in Scenes based on Key-point Diffusion Model</title>
     <style>
         body {
@@ -116,7 +115,8 @@
             "Partial Point Cloud Reconstruction Diffusion Model" requires training a key point diffusion model to complete and reconstruct the partial point clouds. During training, the scene point cloud segmentation detection model is used to obtain the partial point cloud and pose information of the instance, which is then transformed from the scene space to the regular space as input for the key point diffusion model.
             </div>
         </div>
-
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
         <script>
 
             var scene = new THREE.Scene();
