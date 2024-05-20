@@ -48,15 +48,15 @@
             border-radius: 8px;
             margin-top: 20px;
         }
-        .words {
+        .words-container {
             width: 85%;
             margin-top: 10px;
         }
-        .words justified-text {
+        .words-container .justified-text {
             text-align: justify;
             margin-bottom: 15px;
         }
-        .words small-title {
+        .words-container .small-title {
             font-size: 17px;
             margin-bottom: 5px;
             font-weight: bold;
@@ -72,7 +72,7 @@
         <div class="image-container">
             <img src="source/img/teaser.png" alt="Description of the image">
         </div>
-        <div class="words">
+        <div class="words-container">
             <div class="small-title">Abstract</div>
             <div class="justified-text">
                 Semantic scene reconstruction based on point clouds is an important and challenging task in 3D scene understanding. This task requires not only identifying each instance in the point cloud scene but also reconstructing their geometric shapes based on partially observed point cloud data. 
@@ -81,7 +81,7 @@
                 Compared to previous work, the algorithm of this work addresses issues such as the significant impact of predicted pose on reconstruction results, poor quality and insufficient quantity of supervised data during partial cloud reconstruction, unreasonable utilization of predicted partial point clouds, and limited expression ability of previous reconstruction methods.Furthermore, we address data quality issues by improving the acquisition and utilization of keypoint features. Moreover, we enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
             </div>
         </div>
-        <div class="words">
+        <div class="words-container">
             <div class="small-title">Method</div>
                 
             <div class="justified-text">
