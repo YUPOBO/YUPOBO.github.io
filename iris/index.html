@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Instance-Level Object Reconstruction in Scenes 
-        based on Key-point Diffusion Model
+        Instance-Level Object Reconstruction in Scenes based on Key-point Diffusion Model
     </title>
     <style>
         body {
@@ -86,10 +85,10 @@
         <div class="words-container">
             <div class="small-title">Abstract</div>
             <div class="justified-text">
-                Semantic scene reconstruction based on point clouds is an important and challenging task in 3D scene understanding. This task requires not only identifying each instance in the point cloud scene but also reconstructing their geometric shapes based on partially observed point cloud data. 
+                Semantic scene reconstruction based on point clouds is a crucial and challenging task in the field of 3D scene understanding. This task requires not only identifying each instance in the point cloud scene but also reconstructing their geometric shapes based on partially observed point cloud data. 
             </div>
             <div class="justified-text">
-                Compared to previous work, the algorithm of this work addresses issues such as the significant impact of predicted pose on reconstruction results, poor quality and insufficient quantity of supervised data during partial cloud reconstruction, unreasonable utilization of predicted partial point clouds, and limited expression ability of previous reconstruction methods.Furthermore, we address data quality issues by improving the acquisition and utilization of keypoint features. Moreover, we enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
+                Compared to previous work, our algorithm of this work addresses several key issues, including the significant impact of predicted pose on reconstruction results, the poor quality and insufficient quantity of supervised data during partial cloud reconstruction, the unreasonable utilization of predicted partial point clouds, and the limited expression ability of previous reconstruction methods.We alse address data quality issues by improving the acquisition and utilization of keypoint features, and enhance the reconstruction quality of incomplete point clouds by incorporating keypoints into a diffusion model.
             </div>
         </div>
 
@@ -108,10 +107,10 @@
 
         <div class="words-container">
             <div class="justified-text">
-                The algorithm is mainly divided into three parts, namely three models.
+                The algorithm is mainly divided into three components, namely these three models:
             </div>
             <div class="justified-text">
-                "The Mask3D Based Object Segmentation & Localization Prediction" part requires segmenting the point cloud of the object from the scene point cloud and obtaining corresponding pose information. This section is modified based on the Mask3D segmentation model to predict the center and size of the object, but not the angle.
+                "The <a href="https://arxiv.org/abs/2210.03105">Mask3D</a> Based Object Segmentation & Localization Prediction" part requires segmenting the point cloud of the object from the scene point cloud and obtaining corresponding pose information. This section is modified based on the <a href="https://arxiv.org/abs/2210.03105">Mask3D</a> segmentation model to predict the center and size of the object, but not the angle.
             </div>
             <div class="justified-text">
             "Shape Prior Vae"  embeds the shape of a 3D object into latent vectors, representing the object using latent vectors. At this step,  data augmentation will be performed during training, where the orientation of the object is arbitrary, allowing the reconstruction method to handle input of point cloud objects with any orientation. We use keypoints and overall points to do cross attention, which makes it faster and more effective to obtain key points features for future use.
@@ -129,6 +128,15 @@
             <img src="source/img/results.png" alt="Description of the image">
         </div>
 
+        <div class="image-container">
+            <img src="source/img/results2.png" alt="Description of the image">
+        </div>
+
+        <div class="words-container">
+            <div class="justified-text">
+                Our work has more accurate and high-quality reconstruction compared to state-of-the-art work <a href="https://arxiv.org/abs/2203.16832">Dimr</a>, and occasionally there may be more relevant reconstruction results than manually annotated GT (ground truth) data <a href="https://arxiv.org/abs/1811.11187">Scan2CAD</a> dataset.
+            </div>
+        </div>
 
 
 
